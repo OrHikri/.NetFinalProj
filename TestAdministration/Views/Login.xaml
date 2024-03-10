@@ -1,0 +1,22 @@
+﻿<Window x:Class="TestAdministration.Views.Login"  Style="{DynamicResource WindowStyle}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestAdministration.Views"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="Login" Height="450" Width="800">
+    <Grid>
+        <Label Content="התחברות" HorizontalAlignment="Left" FontSize="30" Height="61" Margin="351,14,0,0" VerticalAlignment="Top" Width="151"/>
+
+        <Label Content=": שם משתמש" HorizontalAlignment="Left" Height="40" Margin="551,160,0,0" VerticalAlignment="Top" Width="115"/>
+        <TextBox HorizontalAlignment="Center" Height="40" Margin="0,152,0,0" TextWrapping="Wrap" Name="userName" VerticalAlignment="Top" Width="254"/>
+
+        <Label Content=": סיסמא" HorizontalAlignment="Left" Height="40" Margin="551,217,0,0" VerticalAlignment="Top" Width="115"/>
+        <TextBox HorizontalAlignment="Center" Height="40" Margin="0,217,0,0" TextWrapping="Wrap" x:Name="password"  VerticalAlignment="Top" Width="254"/>
+
+        <Button Name="login_Btn" Content="התחבר" HorizontalAlignment="Left" Height="45" Margin="334,344,0,0" VerticalAlignment="Top" Width="120" />
+
+    </Grid>
+</Window>

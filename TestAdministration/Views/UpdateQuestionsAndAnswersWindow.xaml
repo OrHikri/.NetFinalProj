@@ -1,0 +1,38 @@
+﻿<Window x:Class="TestAdministration.Views.UpdateQuestionsAndAnswersWindow"  Style="{DynamicResource WindowStyle}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestAdministration.Views"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Loaded="OnLoad"
+        Title="UpdateQuestionsAndAnswersWindow" Height="450" Width="800">
+    <Grid>
+        <ListBox x:Name="listBoxQuestions" SelectionChanged="listBoxQuestions_SelectionChanged" HorizontalAlignment="Left" Height="424" Margin="540,0,0,0" VerticalAlignment="Top" Width="256"  />
+
+
+        <Label Content=":שאלה" Name="lblQ" HorizontalAlignment="Left" Height="28" Margin="376,57,0,0" VerticalAlignment="Top" Width="115"/>
+        <TextBox Name="txtQ" HorizontalAlignment="Left" Height="28" Margin="177,57,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
+
+        <Label Content=":תשובה 1" Name="lblAnswer1" HorizontalAlignment="Left" Height="28" Margin="376,107,0,0" VerticalAlignment="Top" Width="115"/>
+        <TextBox Name="txtAnswer1" HorizontalAlignment="Left" Height="28" Margin="177,107,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
+
+        <Label Content=":תשובה 2" Name="lblAnswer2" HorizontalAlignment="Left" Height="28" Margin="376,151,0,0" VerticalAlignment="Top" Width="115"/>
+        <TextBox Name="txtAnswer2" HorizontalAlignment="Left" Height="28" Margin="177,149,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
+
+        <Label Content=":תשובה 3" Name="lblAnswer3" HorizontalAlignment="Left" Height="28" Margin="376,0,0,0" VerticalAlignment="Center" Width="115"/>
+        <TextBox Name="txtAnswer3" HorizontalAlignment="Left" Height="28" Margin="177,197,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
+
+        <Label Content=":אינדקס תשובה נכונה" Name="lblcrctans" HorizontalAlignment="Left" Height="28" Margin="376,241,0,0" VerticalAlignment="Top" Width="141"/>
+        <TextBox Name="txtIndxCrctAns" HorizontalAlignment="Left" Height="28" Margin="177,245,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
+
+        <Label Content=":האם סידור התשובות רנדומלי" Name="lblIsAnswersRendomOrder" HorizontalAlignment="Left" Height="28" Margin="376,289,0,0" VerticalAlignment="Top" Width="164"/>
+        <CheckBox Name="MyCheckBox"  HorizontalAlignment="Left" Height="28" Margin="252,289,0,0" VerticalAlignment="Top" Width="28"/>
+
+        <Button Content="מחק שאלה ותשובות" x:Name="DeleteQusAndAns_btn" HorizontalAlignment="Center" Height="40" Margin="0,339,0,0" VerticalAlignment="Top" Width="116" />
+        <Button Content="עדכן שאלה ותשובות" Name="UpadteQusAndAns_btn" HorizontalAlignment="Left" Height="40" Margin="111,339,0,0" VerticalAlignment="Top" Width="117"/>
+
+
+    </Grid>
+</Window>

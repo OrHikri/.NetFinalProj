@@ -1,0 +1,46 @@
+﻿<Window x:Class="TestAdministration.FindAndUpdateExamWindow"  Style="{DynamicResource WindowStyle}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestAdministration.Views"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="FindAndUpdateExamWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="DBחפש מבחן ב" HorizontalAlignment="Left" Height="34" Margin="478,10,0,0" VerticalAlignment="Top" Width="231"/>
+        <TextBox HorizontalAlignment="Left" Height="34" Margin="262,8,0,0" TextWrapping="Wrap" Name="SearchTxT"  VerticalAlignment="Top" Width="211"/>
+        
+        <ListBox Name="listBoxTests" SelectionChanged="listBoxTests_SelectionChanged" HorizontalAlignment="Left" Height="380" Margin="497,44,0,0" VerticalAlignment="Top" Width="303" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+
+        <Label Content=":שם מבחן" HorizontalAlignment="Left" Height="27" Margin="336,53,0,0" VerticalAlignment="Top" Width="124"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="97,53,0,0" TextWrapping="Wrap" Name="testName" VerticalAlignment="Top" Width="165"/>
+
+        <Label Content=" :מבחן ID" HorizontalAlignment="Left" Height="27" Margin="336,93,0,0" VerticalAlignment="Top" Width="124"/>
+        <TextBox HorizontalAlignment="Left" IsReadOnly="true" Height="28" Margin="97,91,0,0" TextWrapping="Wrap" Name="testId" VerticalAlignment="Top" Width="165"/>
+
+        <Label Content=":תאריך מבחן" HorizontalAlignment="Left" Height="27" Margin="336,133,0,0" VerticalAlignment="Top" Width="124"/>
+        <DatePicker Name="datePicker1" HorizontalAlignment="Left" Height="27" Margin="97,133,0,0" VerticalAlignment="Top" Width="165"/>
+
+        <Label Content=":שם מורה של המבחן" HorizontalAlignment="Left" Height="27" Margin="336,173,0,0" VerticalAlignment="Top" Width="124"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="97,177,0,0" TextWrapping="Wrap" Name="testTeacherName" VerticalAlignment="Top" Width="165"/>
+
+        <Label Content=":שעת התחלת מבחן" HorizontalAlignment="Left" Height="27" Margin="336,220,0,0" VerticalAlignment="Top" Width="124"/>
+        <TextBox PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Height="28" Margin="97,220,0,0" TextWrapping="Wrap" Name="testHH" VerticalAlignment="Top" Width="66"/>
+        <TextBlock HorizontalAlignment="Left" Height="26" Margin="178,222,0,0" TextWrapping="Wrap" Name="txtStartTime" Text=":" VerticalAlignment="Top" Width="24" RenderTransformOrigin="0.425,-0.729"/>
+        <TextBox PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Height="26" Margin="199,220,0,0" TextWrapping="Wrap" Name="testMM" VerticalAlignment="Top" Width="60"/>
+
+        <Label Content=":(זמן מבחן כולל (בשעות" HorizontalAlignment="Left" Height="27" Margin="336,268,0,0" VerticalAlignment="Top" Width="137"/>
+        <TextBox PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Height="27" Margin="97,268,0,0" TextWrapping="Wrap" Name="testTotalTime" VerticalAlignment="Top" Width="165"/>
+
+        <Label Content=":האם סידור השאלות רנדומלי" HorizontalAlignment="Left" Height="27" Margin="336,318,0,0" VerticalAlignment="Top" Width="156"/>
+        <CheckBox Name="McCheckBox"  HorizontalAlignment="Left" Height="27" Margin="164,318,0,0" VerticalAlignment="Top" Width="36"/>
+
+        <Button Content="עדכן מבחן" Name="UpdateTestbtn" HorizontalAlignment="Left" Height="40" Margin="368,359,0,0" VerticalAlignment="Top" Width="105" />
+        <Button Content="מחק מבחן" x:Name="DeleteTestbtn" HorizontalAlignment="Left" Height="40" Margin="230,359,0,0" VerticalAlignment="Top" Width="104" />
+        <Button Content="עדכן שאלות ותשובות" Name="UpadteQusAndAnsbtn" HorizontalAlignment="Left" Height="40" Margin="71,359,0,0" VerticalAlignment="Top" Width="117"  Click="UpadteQusAndAns_btn_Click"/>
+
+
+
+    </Grid>
+</Window>

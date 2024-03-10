@@ -1,0 +1,87 @@
+﻿<Window x:Class="TestAdministration.RunExamWindow"  Style="{DynamicResource WindowStyle}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestAdministration"
+        mc:Ignorable="d"
+        Loaded="OnLoad"
+        Title="RunExamWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"  />
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Name="InnerGrid" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="13*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"  />
+                <RowDefinition Height="auto"  />
+                <RowDefinition Height="auto"  />
+                <RowDefinition Height="*"  />
+            </Grid.RowDefinitions>
+            <DockPanel Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,434" Grid.RowSpan="4"/>
+            <ListBox ItemsSource="{Binding _Items}" Background="WhiteSmoke" Grid.Row="3" Name="listBoxQuestions" Grid.ColumnSpan="2" />
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition  Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock  Name="TBCountDown"  HorizontalAlignment="Left" Height="26" Margin="50,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="75" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.956"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+
+            <Label Content=": שם מבחן  " Margin="249,36,10,35" Grid.Column="1"/>
+            <TextBox IsReadOnly="True" BorderThickness="0" Grid.Column="1" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Name="TestName" VerticalAlignment="Center" Width="61" Margin="183,0,0,0" RenderTransformOrigin="0.5,0.5">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="1.43"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <Label Content=": מספר מבחן  " Margin="249,67,12,45" Grid.Column="1" Grid.RowSpan="2"/>
+            <TextBox IsReadOnly="True"  BorderThickness="0" Grid.Column="1" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Name="TestId" VerticalAlignment="Top" Width="61" Margin="183,73,0,0" RenderTransformOrigin="0.947,0.499"/>
+
+            <TextBox Text ="0" Name="QusAnswered"  BorderThickness="0" Height="19" Margin="0,67,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" HorizontalAlignment="Center" Width="24" RenderTransformOrigin="1.01,0.589"  />
+            <TextBlock HorizontalAlignment="Left" Height="19" Margin="77,67,0,0" TextWrapping="Wrap" Text="/" VerticalAlignment="Top" Width="33"/>
+            <TextBox Name="TotalQus"  BorderThickness="0"   HorizontalAlignment="Left" Height="19" Margin="99,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Grid.ColumnSpan="2"/>
+
+            <Label FontSize="15" Margin="10" Grid.Row="1" Grid.Column="0"  Name="lblId" Content="שאלה:"  />
+            <TextBox Margin="22,10,22,10" IsReadOnly="true"  Background="LightGray" Name="txtQustion" Grid.Row="1" Grid.Column="1"   />
+            <Label FontSize="15" Margin="10,9,10,41" Grid.Row="4" Grid.Column="0"  Name="lblAsId" Content="תשובה:"  />
+            <ComboBox x:Name="comboBox" Grid.Column="1" Margin="0,12,0,0" Grid.Row="4" VerticalAlignment="Top" Width="315" Height="28"  SelectionChanged="comboBox_SelectionChanged"  >
+                <ComboBoxItem Tag="Item_1" />
+                <ComboBoxItem Tag="Item_2" />
+                <ComboBoxItem Tag="Item_3" />
+            </ComboBox>
+
+            <Button IsEnabled="False" FontSize="15" Height="30" Content="שאלה קודמת" Width="100" x:Name="btnPreviousQue" Click="btnPreviousQue_Click" Command="{Binding PreviousCommand}" CommandParameter="{Binding SelectedIndex, ElementName=ListBox}" Margin="2,95,258,-45" Grid.Row="4" Grid.Column="1" />
+            <Button IsEnabled="False" FontSize="15" Height="30" Content="שאלה הבאה" Width="100" x:Name="btnNextQue" Click="btnNextQue_Click" Command="{Binding NextCommand}" CommandParameter="{Binding SelectedIndex, ElementName=ListBox}" Margin="132,97,128,-47" Grid.Row="4" Grid.Column="1" />
+
+            <Button IsEnabled="False" FontSize="15" Content="סיים מבחן" x:Name="finishTestBtn" Click="finishTestBtn_Click"  CommandParameter="{Binding SelectedIndex, ElementName=ListBox}" Margin="76,155,204,-105" Grid.Column="1" Grid.Row="4" />
+
+        </Grid>
+
+    </Grid>
+</Window>
